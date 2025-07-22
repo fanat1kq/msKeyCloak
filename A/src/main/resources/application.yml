@@ -1,0 +1,14 @@
+server:
+  port: 8082
+
+spring:
+  cloud:
+    compatibility-verifier:
+      enabled: false
+  config:
+    import: classpath:application-secret.yml
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          issuer-uri: ${KEYCLOAK_ISSUER_URI}

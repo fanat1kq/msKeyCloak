@@ -1,0 +1,21 @@
+server:
+  port: 8081
+
+spring:
+  security:
+    oauth2:
+      client:
+        registration:
+          keycloak:
+            client-id: bff-client
+            client-secret: BOGuikVCwVlHy5pqE6FgKFDIkxbxQKVU
+            authorization-grant-type: authorization_code
+            redirect-uri: "{baseUrl}/login/oauth2/code/keycloak"
+            scope: openid,profile,email
+        provider:
+          keycloak:
+            issuer-uri: http://localhost:8080/realms/demo-realm
+servicea:
+  url: http://localhost:8082
+serviceb:
+  url: http://localhost:8083
